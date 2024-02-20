@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SwipeItemInFlyout.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SwipeItemInFlyout"
+    Title="SwipeItemInFlyout"
+    FlyoutBackgroundColor="LightCyan"
+    Shell.FlyoutBehavior="Flyout">
+
+    <Shell.FlyoutContent>
+        <Grid>
+            <SwipeView
+                Margin="10"
+                BackgroundColor="Silver"
+                VerticalOptions="Start">
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem
+                            BackgroundColor="Red"
+                            Command="{Binding DoSomethingCommand}"
+                            Text="DoSomethingCommand" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Label
+                    Margin="0"
+                    FontAttributes="Bold"
+                    Text="Swipe to the right" />
+            </SwipeView>
+        </Grid>
+    </Shell.FlyoutContent>
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+</Shell>
